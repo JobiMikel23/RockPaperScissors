@@ -1,6 +1,13 @@
-let playerSelection = (prompt("Please enter your weapon of choice, rock, paper or scissors"));
-playerSelection = playerSelection.toUpperCase();
-console.log("player choice is " + playerSelection);
+function playerSelection(){
+    let playerChoice = (prompt("Please enter your weapon of choice, rock, paper or scissors"));
+    playerChoice = playerChoice.toUpperCase();
+    console.log(playerChoice);
+    return playerChoice;
+}
+
+// let playerSelection = (prompt("Please enter your weapon of choice, rock, paper or scissors"));
+// playerSelection = playerSelection.toUpperCase();
+// console.log("player choice is " + playerSelection);
 
 function getComputerChoice(){
     choice = Math.floor(Math.random() * 3)
@@ -18,5 +25,5 @@ function getComputerChoice(){
 
     
 }
-
+playerSelection();
 getComputerChoice();
