@@ -33,7 +33,7 @@ function playRound(playerSelection, computerSelection){
     || playerSelection == "PAPER" && computerSelection == "PAPER"){
         console.log("its a draw");
         return "its a draw"
-    }
+    } 
     else if (playerSelection == "ROCK" && computerSelection == "PAPER"){
         console.log("YOU LOSE HA HA !");
         return "YOU LOSE HA HA !"
