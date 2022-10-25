@@ -12,13 +12,13 @@ function getPlayerChoice(){
 function getComputerChoice(){
     choice = Math.floor(Math.random() * 3)
     if (choice == 0){
-        choice = "Rock";
+        choice = "ROCK";
     } else if
     (choice == 1){
-        choice = "Scissors";
+        choice = "SCISSORS";
     }
     else{
-        choice = "Paper";
+        choice = "PAPER";
     }
     console.log(choice);
     return choice;
@@ -26,6 +26,13 @@ function getComputerChoice(){
     
 }
 
-function playRound(getPlayerChoice, computerSelection)
-getPlayerChoice();
-getComputerChoice();
+function playRound(playerSelection, computerSelection){
+    if (playerSelection == "ROCK" && computerSelection == "ROCK"){
+        console.log("its a draw");
+        return "its a draw"
+    }
+}
+
+playRound("ROCK", "ROCK");
+// getPlayerChoice();
+// getComputerChoice();
