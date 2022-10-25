@@ -28,18 +28,20 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection){
 
-    if (playerSelection == "ROCK" && computerSelection == "ROCK" 
-    || playerSelection == "SCISSORS" && computerSelection == "SCISSORS" 
-    || playerSelection == "PAPER" && computerSelection == "PAPER"){
-        console.log("its a draw");
-        return "its a draw"
+    if (playerSelection == "ROCK" && computerSelection == "ROCK" ||
+        playerSelection == "SCISSORS" && computerSelection == "SCISSORS" ||
+        playerSelection == "PAPER" && computerSelection == "PAPER"){
+        console.log("its a draw you both picked " + playerSelection)
+        return "IT'S A DRAW YOU BOTH PICKED" + playerSelection ;
     } 
-    else if (playerSelection == "ROCK" && computerSelection == "PAPER"){
-        console.log("YOU LOSE HA HA !");
-        return "YOU LOSE HA HA !"
+    else if (playerSelection == "ROCK" && computerSelection == "PAPER" ||
+             playerSelection == "PAPER" && computerSelection == "SCISSORS" || 
+             playerSelection == "SCISSORS" && computerSelection == "ROCK"){
+        console.log("YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
+        return "YOU LOSE HA HA !";
     }
 }
 
-playRound("PAPER", "PAPER");
+playRound("ROCK", "PAPER");
 // getPlayerChoice();
 // getComputerChoice();
