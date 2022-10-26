@@ -75,23 +75,28 @@ function game(){
         const computerSelection = getComputerChoice();
 
         const currentResult = playRound(playerSelection,computerSelection);
-
+        
         if(currentResult == "draw"){
             draws += 1;
+            console.log("IT'S A DRAW YOU BOTH PICKED " + playerSelection)
         }
-        else if(round == lose){
+        else if(currentResult == "lose"){
             losses +=1;
+            console.log("YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection)
         }
-        else wins +=1; 
+        else {
+            wins+=1;
+            console.log("YOU WIN! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
+        } 
+            
 
         console.log("wins is " +  wins + " losses is " + losses + " draws is " + draws);
     }
 
 }
 
-const playerSelection = "ROCK";
-const computerSelection = "ROCK";
-const round = playRound(playerSelection,computerSelection);
+
+game();
 
 
 
