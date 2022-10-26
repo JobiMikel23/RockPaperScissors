@@ -40,8 +40,11 @@ function playRound(playerSelection, computerSelection){
         console.log("YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
         return "YOU LOSE HA HA !";
     }
+    else 
+        console.log("you win");
+        return "You win";
 }
 
-playRound("ROCK", "PAPER");
+playRound("SCISSORS", "PAPER");
 // getPlayerChoice();
 // getComputerChoice();
