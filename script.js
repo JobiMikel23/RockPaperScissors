@@ -35,7 +35,7 @@ function playRound(playerSelection, computerSelection){
         playerSelection == "SCISSORS" && computerSelection == "SCISSORS" ||
         playerSelection == "PAPER" && computerSelection == "PAPER"){
         // console.log("its a draw you both picked " + playerSelection)
-        return "IT'S A DRAW YOU BOTH PICKED" + playerSelection ;
+        return "IT'S A DRAW YOU BOTH PICKED " + playerSelection ;
     } 
     else if (playerSelection == "ROCK" && computerSelection == "PAPER" ||
              playerSelection == "PAPER" && computerSelection == "SCISSORS" || 
@@ -53,9 +53,24 @@ function playRound(playerSelection, computerSelection){
 // use if statements to cover the draw, lose and win scenario. Win scenario only needs 
 // else as everything else has been covered.
 
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection,computerSelection));
+
+
+function game(){
+    for (let i = 0; i < 5; i++){
+
+        const playerSelection = getPlayerChoice();
+
+        const computerSelection = getComputerChoice();
+
+        
+
+        console.log(playRound(playerSelection,computerSelection));
+    }
+}
+game();
+
+
+// console.log(playRound(playerSelection,computerSelection));
 
 //call the getPlayerChoice function and assign the return variable to playerSelection
 //to be used as an argument
