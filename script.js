@@ -89,8 +89,16 @@ function game(){
             console.log("YOU WIN! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
         } 
             
-
-        console.log("wins is " +  wins + " losses is " + losses + " draws is " + draws);
+      
+        // console.log("wins is " +  wins + " losses is " + losses + " draws is " + draws);
+    }
+    if (wins > losses){
+        console.log("CONGRATULATIONS, YOU HAVE ONE THE SET OF ROCK PAPER SCISSORS")
+    }
+    else if (losses > wins){
+        console.log("UNLUCKY LOSER, YOU LOST THE SET OF ROCK PAPER SCISSORS TO THE COMPUTER HA HA !")
+    }else{
+        console.log("BORING! IT'S A DRAW")
     }
 
 }
