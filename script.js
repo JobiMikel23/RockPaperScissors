@@ -31,14 +31,15 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection){
 
-    let draw = "IT'S A DRAW YOU BOTH PICKED " + playerSelection;
-    let lose = "YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection;
-    let win = "YOU WIN! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection;
+    let draw = "draw";
+    let lose = "lose";
+    let win = "win";
     
     if (playerSelection == "ROCK" && computerSelection == "ROCK" ||
         playerSelection == "SCISSORS" && computerSelection == "SCISSORS" ||
         playerSelection == "PAPER" && computerSelection == "PAPER"){
         // console.log("its a draw you both picked " + playerSelection)
+        
         return draw;
     } 
     else if (playerSelection == "ROCK" && computerSelection == "PAPER" ||
@@ -65,20 +66,20 @@ function game(){
     let wins = 0;
     let draws = 0;
     let losses = 0;
-    let currentResult = 0;
+    
 
-    for (let i = 0; i < 5; i++){
+    for (let i = 0; i < 3; i++){
 
         const playerSelection = getPlayerChoice();
 
         const computerSelection = getComputerChoice();
 
-        currentResult = playRound(playerSelection,computerSelection);
+        const currentResult = playRound(playerSelection,computerSelection);
 
-        if(currentResult == draw){
+        if(currentResult == "draw"){
             draws += 1;
         }
-        else if(currentResult == lose){
+        else if(round == lose){
             losses +=1;
         }
         else wins +=1; 
@@ -86,12 +87,14 @@ function game(){
         console.log("wins is " +  wins + " losses is " + losses + " draws is " + draws);
     }
 
-
 }
-game();
 
-// const playerSelection = getPlayerChoice();
-// const computerSelection = getComputerChoice();
+const playerSelection = "ROCK";
+const computerSelection = "ROCK";
+const round = playRound(playerSelection,computerSelection);
+
+
+
 // console.log(playRound(playerSelection,computerSelection));
 
 //call the getPlayerChoice function and assign the return variable to playerSelection
