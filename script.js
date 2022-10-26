@@ -1,7 +1,7 @@
 function getPlayerChoice(){
     let choice = (prompt("Please enter your weapon of choice, rock, paper or scissors"));
     choice = choice.toUpperCase();
-    console.log(choice);
+    // console.log(choice);
     return choice;
 }
 
@@ -9,10 +9,6 @@ function getPlayerChoice(){
 // to choice variable, makes the choice uppercase so no matter the users input 
 // The choices will be the same 
 // return this choice. 
-
-// let getPlayerChoice = (prompt("Please enter your weapon of choice, rock, paper or scissors"));
-// getPlayerChoice = getPlayerChoice.toUpperCase();
-// console.log("player choice is " + getPlayerChoice);
 
 function getComputerChoice(){
     choice = Math.floor(Math.random() * 3)
@@ -25,7 +21,7 @@ function getComputerChoice(){
     else{
         choice = "PAPER";
     }
-    console.log(choice);
+    // console.log(choice);
     return choice;
 
 }
@@ -38,18 +34,18 @@ function playRound(playerSelection, computerSelection){
     if (playerSelection == "ROCK" && computerSelection == "ROCK" ||
         playerSelection == "SCISSORS" && computerSelection == "SCISSORS" ||
         playerSelection == "PAPER" && computerSelection == "PAPER"){
-        console.log("its a draw you both picked " + playerSelection)
+        // console.log("its a draw you both picked " + playerSelection)
         return "IT'S A DRAW YOU BOTH PICKED" + playerSelection ;
     } 
     else if (playerSelection == "ROCK" && computerSelection == "PAPER" ||
              playerSelection == "PAPER" && computerSelection == "SCISSORS" || 
              playerSelection == "SCISSORS" && computerSelection == "ROCK"){
-        console.log("YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
-        return "YOU LOSE HA HA !";
+        // console.log("YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
+        return "YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection;
     }
     else 
-        console.log("you win");
-        return "You win";
+        // console.log("YOU WIN! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
+        return "YOU WIN! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection;
 }
 
 //playRound function, with the playerSelection and computerSelection as parameters
@@ -57,6 +53,15 @@ function playRound(playerSelection, computerSelection){
 // use if statements to cover the draw, lose and win scenario. Win scenario only needs 
 // else as everything else has been covered.
 
-playRound("SCISSORS", "PAPER");
+const playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection,computerSelection));
+
+//call the getPlayerChoice function and assign the return variable to playerSelection
+//to be used as an argument
+//do the same with the getComputerChoicefunction
+//Print the result of running playRound function with the relevant arguments
+
+
 // getPlayerChoice();
 // getComputerChoice();
