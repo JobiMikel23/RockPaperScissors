@@ -78,27 +78,29 @@ function game(){
         
         if(currentResult == "draw"){
             draws += 1;
-            console.log("IT'S A DRAW YOU BOTH PICKED " + playerSelection)
+            console.log("THIS ROUND IS A DRAW YOU BOTH PICKED " + playerSelection);
         }
         else if(currentResult == "lose"){
             losses +=1;
-            console.log("YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection)
+            console.log("YOU LOSE THIS ROUND HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
         }
         else {
             wins+=1;
-            console.log("YOU WIN! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
+            console.log("YOU WIN THIS ROUND! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
         } 
             
       
         // console.log("wins is " +  wins + " losses is " + losses + " draws is " + draws);
     }
     if (wins > losses){
-        console.log("CONGRATULATIONS, YOU HAVE ONE THE SET OF ROCK PAPER SCISSORS")
+        console.log("CONGRATULATIONS, YOU HAVE WON THE SET OF ROCK PAPER SCISSORS\nYOU GOT " + wins + " POINTS AND THE COMPUTER GOT "
+        + losses + " POINTS");
     }
     else if (losses > wins){
-        console.log("UNLUCKY LOSER, YOU LOST THE SET OF ROCK PAPER SCISSORS TO THE COMPUTER HA HA !")
+        console.log("UNLUCKY LOSER, YOU LOST THE SET OF ROCK PAPER SCISSORS TO THE COMPUTER HA HA !\nYOU GOT " + losses + 
+        "AND THE COMPUTER GOT "+ wins + " POINTS" );
     }else{
-        console.log("BORING! IT'S A DRAW")
+        console.log("BORING! IT'S A DRAW \n YOU BOTH GOT " + draws + " POINTS");
     }
 
 }
