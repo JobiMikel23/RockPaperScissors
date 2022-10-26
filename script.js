@@ -5,6 +5,11 @@ function getPlayerChoice(){
     return choice;
 }
 
+//getPlayerChoice function, asks the user for an input. Assigns this input
+// to choice variable, makes the choice uppercase so no matter the users input 
+// The choices will be the same 
+// return this choice. 
+
 // let getPlayerChoice = (prompt("Please enter your weapon of choice, rock, paper or scissors"));
 // getPlayerChoice = getPlayerChoice.toUpperCase();
 // console.log("player choice is " + getPlayerChoice);
@@ -23,8 +28,10 @@ function getComputerChoice(){
     console.log(choice);
     return choice;
 
-    
 }
+
+// getComputerChoice function, generates a random number between 0-2 inclusive
+// assign to variable choice, if choice is equal to a certain number assign computers turn
 
 function playRound(playerSelection, computerSelection){
 
@@ -44,6 +51,11 @@ function playRound(playerSelection, computerSelection){
         console.log("you win");
         return "You win";
 }
+
+//playRound function, with the playerSelection and computerSelection as parameters
+//The playerChoice and computerChoice will be used as arguments for this 
+// use if statements to cover the draw, lose and win scenario. Win scenario only needs 
+// else as everything else has been covered.
 
 playRound("SCISSORS", "PAPER");
 // getPlayerChoice();
