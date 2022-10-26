@@ -31,21 +31,26 @@ function getComputerChoice(){
 
 function playRound(playerSelection, computerSelection){
 
+    let draw = "IT'S A DRAW YOU BOTH PICKED " + playerSelection;
+    let lose = "YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection;
+    let win = "YOU WIN! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection;
+    
     if (playerSelection == "ROCK" && computerSelection == "ROCK" ||
         playerSelection == "SCISSORS" && computerSelection == "SCISSORS" ||
         playerSelection == "PAPER" && computerSelection == "PAPER"){
         // console.log("its a draw you both picked " + playerSelection)
-        return "IT'S A DRAW YOU BOTH PICKED " + playerSelection ;
+        return draw ;
     } 
     else if (playerSelection == "ROCK" && computerSelection == "PAPER" ||
              playerSelection == "PAPER" && computerSelection == "SCISSORS" || 
              playerSelection == "SCISSORS" && computerSelection == "ROCK"){
         // console.log("YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
-        return "YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection;
+        return lose;
+        
     }
     else 
         // console.log("YOU WIN! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
-        return "YOU WIN! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection;
+        return win;
 }
 
 //playRound function, with the playerSelection and computerSelection as parameters
@@ -55,22 +60,23 @@ function playRound(playerSelection, computerSelection){
 
 
 
-function game(){
-    for (let i = 0; i < 5; i++){
+// function game(){
+//     for (let i = 0; i < 5; i++){
 
-        const playerSelection = getPlayerChoice();
+//         const playerSelection = getPlayerChoice();
 
-        const computerSelection = getComputerChoice();
+//         const computerSelection = getComputerChoice();
 
         
 
-        console.log(playRound(playerSelection,computerSelection));
-    }
-}
-game();
+//         console.log(playRound(playerSelection,computerSelection));
+//     }
+// }
+// game();
 
-
-// console.log(playRound(playerSelection,computerSelection));
+const playerSelection = "ROCK"
+const computerSelection = "SCISSORS"
+console.log(playRound(playerSelection,computerSelection));
 
 //call the getPlayerChoice function and assign the return variable to playerSelection
 //to be used as an argument
