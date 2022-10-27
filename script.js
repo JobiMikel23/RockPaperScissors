@@ -1,4 +1,8 @@
+
+
+
 function getPlayerChoice(){
+    
     let choice = (prompt("Please enter your weapon of choice, rock, paper or scissors"));
     choice = choice.toUpperCase();
     // console.log(choice);
@@ -67,11 +71,13 @@ function game(){
     let draws = 0;
     let losses = 0;
     
+        
 
-    for (let i = 0; i < 3; i++){
+    for (let i = 0; i < 5; i++){
 
+        
         const playerSelection = getPlayerChoice();
-
+        
         const computerSelection = getComputerChoice();
 
         const currentResult = playRound(playerSelection,computerSelection);
@@ -84,12 +90,12 @@ function game(){
             losses +=1;
             console.log("YOU LOSE THIS ROUND HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
         }
-        else {
+        else{
             wins+=1;
             console.log("YOU WIN THIS ROUND! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
         } 
             
-      
+        
         // console.log("wins is " +  wins + " losses is " + losses + " draws is " + draws);
     }
     if (wins > losses){
@@ -107,7 +113,6 @@ function game(){
 
 
 game();
-
 
 
 // console.log(playRound(playerSelection,computerSelection));
