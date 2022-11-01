@@ -1,13 +1,40 @@
+const buttons = document.querySelectorAll('button');
+
+// testing button ids 
+// function clickPlayerChoice(){
+//     if (rockBtn.id === "Rock"){
+//         console.log("Rock");
+//     }
+// }
+
+buttons.forEach((button) => {
+    button.addEventListener('click', () => {
+        if (button.id == "Rock"){
+            console.log("Rock");
+            return "Rock";
+        }
+    });
+});
+
+
+// function getPlayerChoice(){
 
 
 
-function getPlayerChoice(){
+//     let choice = "";
+//     if (button.id == "Rock"){
+//         choice = "Rock";
+//         console.log("hello");
+//     }
+//     console.log(button.id);
+//     return choice; 
     
-    let choice = (prompt("Please enter your weapon of choice, rock, paper or scissors"));
-    choice = choice.toUpperCase();
-    // console.log(choice);
-    return choice;
-}
+//     // let choice = (prompt("Please enter your weapon of choice, rock, paper or scissors"));
+//     // choice = choice.toUpperCase();
+//     // // console.log(choice);
+//     // return choice;
+// }
+
 
 //getPlayerChoice function, asks the user for an input. Assigns this input
 // to choice variable, makes the choice uppercase so no matter the users input 
@@ -38,25 +65,29 @@ function playRound(playerSelection, computerSelection){
     let draw = "draw";
     let lose = "lose";
     let win = "win";
+   
     
     if (playerSelection == "ROCK" && computerSelection == "ROCK" ||
         playerSelection == "SCISSORS" && computerSelection == "SCISSORS" ||
         playerSelection == "PAPER" && computerSelection == "PAPER"){
-        // console.log("its a draw you both picked " + playerSelection)
+        console.log("its a draw you both picked " + playerSelection)
         
         return draw;
     } 
     else if (playerSelection == "ROCK" && computerSelection == "PAPER" ||
              playerSelection == "PAPER" && computerSelection == "SCISSORS" || 
              playerSelection == "SCISSORS" && computerSelection == "ROCK"){
-        // console.log("YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
+            console.log("YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
         return lose;
         
     }
     else 
-        // console.log("YOU WIN! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
+            console.log("YOU WIN! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
         return win;
+    
 }
+
+
 
 //playRound function, with the playerSelection and computerSelection as parameters
 //The playerChoice and computerChoice will be used as arguments for this 
@@ -125,3 +156,10 @@ function playRound(playerSelection, computerSelection){
 
 // getPlayerChoice();
 // getComputerChoice();
+
+
+
+// const rockBtn = document.querySelector('#Rock');
+// rockBtn.addEventListener('click', clickPlayerChoice);
+
+
