@@ -7,9 +7,9 @@ const buttons = document.querySelectorAll('button');
 //     }
 // }
 
+//Iterate through the buttons, using for each. Add event listener to each button to add getPlayerChoice function
 buttons.forEach((button) => {
     button.addEventListener('click', function(){
-
       getPlayerChoice();
     });
 
@@ -17,6 +17,16 @@ buttons.forEach((button) => {
         let choice = "";
         if (button.id == "Rock"){
             choice = "Rock";
+            console.log(choice)
+            return choice;
+        }
+        else if(button.id == "Paper"){
+            choice = "Paper";
+            console.log(choice)
+            return choice;
+        }
+        else{
+            choice = "Scissors";
             console.log(choice)
             return choice;
         }
