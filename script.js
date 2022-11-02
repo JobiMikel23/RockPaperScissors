@@ -8,27 +8,25 @@ const buttons = document.querySelectorAll('button');
 // }
 
 buttons.forEach((button) => {
-    button.addEventListener('click', () => {
-        if (button.id == "Rock"){
-            console.log("Rock");
-            return "Rock";
-        }
+    button.addEventListener('click', function(){
+
+      getPlayerChoice();
     });
+
+    function getPlayerChoice(){
+        let choice = "";
+        if (button.id == "Rock"){
+            choice = "Rock";
+            console.log(choice)
+            return choice;
+        }
+        
+    }
+
 });
 
 
-// function getPlayerChoice(){
 
-
-
-//     let choice = "";
-//     if (button.id == "Rock"){
-//         choice = "Rock";
-//         console.log("hello");
-//     }
-//     console.log(button.id);
-//     return choice; 
-    
 //     // let choice = (prompt("Please enter your weapon of choice, rock, paper or scissors"));
 //     // choice = choice.toUpperCase();
 //     // // console.log(choice);
