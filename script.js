@@ -111,27 +111,27 @@ const container = document.querySelector('#results');
 //The playerChoice and computerChoice will be used as arguments for this 
 // use if statements to cover the draw, lose and win scenario. Win scenario only needs 
 // else as everything else has been covered.
+let playerScore = 0;
+let computerScore = 0;
+let draws = 0;
 
-function game2(){
-    let playerScore = 0;
-    let computerScore = 0;
-    let draws = 0;
-
-    const currentResult = playRound(playerSelection,computerSelection)
-
+function game2(currentResult){
+    
     if (currentResult == "draw"){
         draws +=1;
         // console.log("Draws: "+ draws);
     }
     else if (currentResult == "lose"){
         computerScore += 1;
-        console.log("Losses: "+ computerScore);
+        // console.log("Losses: "+ computerScore);
     }
     else if (currentResult == "win"){
         playerScore += 1;
-        console.log("Wins: "+ playerScore);
+        // console.log("Wins: "+ playerScore);
     }
-    console.log("Draws: " + draws)
+    console.log("Draws: " + draws);
+    console.log("Computer Score: " + computerScore);
+    console.log("Player Score "+ playerScore);
 }
 
 
@@ -214,19 +214,23 @@ rockBtn.addEventListener('click', function(){
     buttonClick = "Rock";
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
-    game2();
+    currentResult = playRound(playerSelection,computerSelection);
+    game2(currentResult);
 });
 paperBtn.addEventListener('click', function(){
     buttonClick = "Paper";
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
-    game2();
+    
+    currentResult = playRound(playerSelection,computerSelection);
+    game2(currentResult);
 });
 scissorBtn.addEventListener('click', function(){
     buttonClick = "Scissors";
     playerSelection = getPlayerChoice();
     computerSelection = getComputerChoice();
-    game2();
+    currentResult = playRound(playerSelection,computerSelection);
+    game2(currentResult);
 });
 
 function getPlayerChoice(){
