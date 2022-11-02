@@ -1,3 +1,4 @@
+
 const buttons = document.querySelectorAll('button');
 
 // testing button ids 
@@ -104,11 +105,13 @@ function playRound(playerSelection, computerSelection){
 }
 
 
-const container = document.querySelector('#container');
+const container = document.querySelector('#results');
 //Select the container 
 
-const results = document.createElement('div');
-results.classList.add('results');
+//create element
+const results = document.createElement('h3');
+results.style.color = "red";
+results.style.fontFamily = "Roboto";
 results.textContent = "This will be where the results are displayed! ";
 
 container.appendChild(results);
