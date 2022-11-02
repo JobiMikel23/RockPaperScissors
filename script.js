@@ -15,7 +15,7 @@ buttons.forEach((button) => {
 
     button.addEventListener('click', function(){
       const playerSelection = getPlayerChoice();
-      const computerSelection = getComputerChoice();
+      const computerSelection = "ROCK";//getComputerChoice();
 
       playRound(playerSelection,computerSelection);
       
@@ -76,30 +76,38 @@ function getComputerChoice(){
 
 // getComputerChoice function, generates a random number between 0-2 inclusive
 // assign to variable choice, if choice is equal to a certain number assign computers turn
+const results = document.createElement('h3');
+results.style.color = "red";
+results.style.fontFamily = "Roboto";
 
 function playRound(playerSelection, computerSelection){
 
     let draw = "draw";
     let lose = "lose";
     let win = "win";
-
+    
     
     if (playerSelection == "ROCK" && computerSelection == "ROCK" ||
         playerSelection == "SCISSORS" && computerSelection == "SCISSORS" ||
         playerSelection == "PAPER" && computerSelection == "PAPER"){
-        console.log("IT'S A DRAW YOU BOTH PICKED  " + playerSelection)
+        results.textContent = "IT'S A DRAW YOU BOTH PICKED  " + playerSelection;
+        //DOM method to add text, to the middle displaying the results. 
+        container.appendChild(results);
         
         return draw;
     } 
     else if (playerSelection == "ROCK" && computerSelection == "PAPER" ||
              playerSelection == "PAPER" && computerSelection == "SCISSORS" || 
              playerSelection == "SCISSORS" && computerSelection == "ROCK"){
-            console.log("YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
+            results.textContent = "YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection;
+            container.appendChild(results);
+            
         return lose;
         
     }
     else 
-            console.log("YOU WIN! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection);
+            results.textContent = "YOU WIN! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection;
+            container.appendChild(results);
         return win;
     
 }
@@ -109,12 +117,7 @@ const container = document.querySelector('#results');
 //Select the container 
 
 //create element
-const results = document.createElement('h3');
-results.style.color = "red";
-results.style.fontFamily = "Roboto";
-results.textContent = "This will be where the results are displayed! ";
 
-container.appendChild(results);
 
 //playRound function, with the playerSelection and computerSelection as parameters
 //The playerChoice and computerChoice will be used as arguments for this 
