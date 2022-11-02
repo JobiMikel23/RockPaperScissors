@@ -83,8 +83,6 @@ function playRound(playerSelection, computerSelection){
     let win = "win";
 
     
-   
-    
     if (playerSelection == "ROCK" && computerSelection == "ROCK" ||
         playerSelection == "SCISSORS" && computerSelection == "SCISSORS" ||
         playerSelection == "PAPER" && computerSelection == "PAPER"){
@@ -106,6 +104,14 @@ function playRound(playerSelection, computerSelection){
 }
 
 
+const container = document.querySelector('#container');
+//Select the container 
+
+const results = document.createElement('div');
+results.classList.add('results');
+results.textContent = "This will be where the results are displayed! ";
+
+container.appendChild(results);
 
 //playRound function, with the playerSelection and computerSelection as parameters
 //The playerChoice and computerChoice will be used as arguments for this 
