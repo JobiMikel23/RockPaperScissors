@@ -16,17 +16,17 @@ buttons.forEach((button) => {
     function getPlayerChoice(){
         let choice = "";
         if (button.id == "Rock"){
-            choice = "Rock";
+            choice = "ROCK";
             console.log(choice)
             return choice;
         }
         else if(button.id == "Paper"){
-            choice = "Paper";
+            choice = "PAPER";
             console.log(choice)
             return choice;
         }
         else{
-            choice = "Scissors";
+            choice = "SCISSOR";
             console.log(choice)
             return choice;
         }
