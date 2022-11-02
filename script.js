@@ -9,8 +9,15 @@ const buttons = document.querySelectorAll('button');
 
 //Iterate through the buttons, using for each. Add event listener to each button to add getPlayerChoice function
 buttons.forEach((button) => {
+    
+
+
     button.addEventListener('click', function(){
-      getPlayerChoice();
+      const playerSelection = getPlayerChoice();
+      const computerSelection = getComputerChoice();
+
+      playRound(playerSelection,computerSelection);
+      
     });
 
     function getPlayerChoice(){
@@ -26,7 +33,7 @@ buttons.forEach((button) => {
             return choice;
         }
         else{
-            choice = "SCISSOR";
+            choice = "SCISSORS";
             console.log(choice)
             return choice;
         }
@@ -34,6 +41,7 @@ buttons.forEach((button) => {
     }
 
 });
+
 
 
 
@@ -73,12 +81,14 @@ function playRound(playerSelection, computerSelection){
     let draw = "draw";
     let lose = "lose";
     let win = "win";
+
+    
    
     
     if (playerSelection == "ROCK" && computerSelection == "ROCK" ||
         playerSelection == "SCISSORS" && computerSelection == "SCISSORS" ||
         playerSelection == "PAPER" && computerSelection == "PAPER"){
-        console.log("its a draw you both picked " + playerSelection)
+        console.log("IT'S A DRAW YOU BOTH PICKED  " + playerSelection)
         
         return draw;
     } 
