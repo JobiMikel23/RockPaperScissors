@@ -1,5 +1,5 @@
 
-const buttons = document.querySelectorAll('button');
+// const buttons = document.querySelectorAll('button');
 
 // testing button ids 
 // function clickPlayerChoice(){
@@ -9,39 +9,21 @@ const buttons = document.querySelectorAll('button');
 // }
 
 //Iterate through the buttons, using for each. Add event listener to each button to add getPlayerChoice function
-buttons.forEach((button) => {
+// buttons.forEach((button) => {
     
 
 
-    button.addEventListener('click', function(){
-      const playerSelection = getPlayerChoice();
-      const computerSelection = "ROCK";//getComputerChoice();
+//     button.addEventListener('click', function(){
+//       const playerSelection = getPlayerChoice();
+//       const computerSelection = "ROCK";//getComputerChoice();
 
-      playRound(playerSelection,computerSelection);
+//       playRound(playerSelection,computerSelection);
       
-    });
+//     });
 
-    function getPlayerChoice(){
-        let choice = "";
-        if (button.id == "Rock"){
-            choice = "ROCK";
-            console.log(choice)
-            return choice;
-        }
-        else if(button.id == "Paper"){
-            choice = "PAPER";
-            console.log(choice)
-            return choice;
-        }
-        else{
-            choice = "SCISSORS";
-            console.log(choice)
-            return choice;
-        }
-        
-    }
+    
 
-});
+// });
 
 
 
@@ -82,6 +64,7 @@ results.style.fontFamily = "Roboto";
 
 function playRound(playerSelection, computerSelection){
 
+    
     let draw = "draw";
     let lose = "lose";
     let win = "win";
@@ -102,13 +85,18 @@ function playRound(playerSelection, computerSelection){
             results.textContent = "YOU LOSE HA HA ! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection;
             container.appendChild(results);
             
-        return lose;
+            return lose;
         
     }
-    else 
+    else if(playerSelection == "ROCK" && computerSelection == "SCISSORSS" || 
+            playerSelection == "PAPER" && computerSelection == "ROCK" ||
+            playerSelection == "SCISSORS" && computerSelection == "PAPER"){
             results.textContent = "YOU WIN! YOU PICKED " + playerSelection + " AND THE COMPUTER PICKED " + computerSelection;
             container.appendChild(results);
-        return win;
+            return win;
+            }
+            
+        
     
 }
 
@@ -187,9 +175,56 @@ const container = document.querySelector('#results');
 // getPlayerChoice();
 // getComputerChoice();
 
+// const buttons = document.querySelectorAll('button');
+
+// buttons.forEach((button) => {
+//     button.addEventListener('click', getPlayerChoice);
+// });
+
+let buttonClick = "";
+
+const rockBtn = document.querySelector('#Rock');
+const paperBtn = document.querySelector('#Paper');
+const scissorBtn = document.querySelector('#Scissors');
 
 
-// const rockBtn = document.querySelector('#Rock');
-// rockBtn.addEventListener('click', clickPlayerChoice);
 
+rockBtn.addEventListener('click', function(){
+    buttonClick = "Rock";
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
+    playRound(playerSelection,computerSelection);
+});
+paperBtn.addEventListener('click', function(){
+    buttonClick = "Paper";
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
+    playRound(playerSelection,computerSelection);
+});
+scissorBtn.addEventListener('click', function(){
+    buttonClick = "Scissors";
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
+    playRound(playerSelection,computerSelection);
+});
 
+function getPlayerChoice(){
+    let choice = "";
+    if (buttonClick == "Rock"){
+        choice = "ROCK";
+        console.log(choice);
+        return choice;
+    }
+    else if (buttonClick == "Paper"){
+        choice = "PAPER";
+        console.log(choice);
+        return choice;
+    }
+    else if (buttonClick = "Scissors"){
+        choice = "SCISSORS";
+        console.log(choice);
+        return choice;
+    }
+    
+    
+}
