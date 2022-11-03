@@ -58,7 +58,11 @@ function getComputerChoice(){
 
 // getComputerChoice function, generates a random number between 0-2 inclusive
 // assign to variable choice, if choice is equal to a certain number assign computers turn
+const container = document.querySelector('#results');
 const results = document.createElement('h3');
+
+
+
 results.style.color = "red";
 results.style.fontFamily = "Roboto";
 
@@ -101,7 +105,7 @@ function playRound(playerSelection, computerSelection){
 }
 
 
-const container = document.querySelector('#results');
+
 //Select the container 
 
 //create element
@@ -115,24 +119,43 @@ let playerScore = 0;
 let computerScore = 0;
 let draws = 0;
 
+const displayScores = document.createElement('h4');
+displayScores.style.color = "blue";
+displayScores.style.fontFamily = "Roboto";
+const scores = document.querySelector('#scores');
+
+const winner = document.querySelector('#winner')
+const displayWinner = document.createElement('h2');
+
+
 function game2(currentResult){
     
     if (currentResult == "draw"){
         draws +=1;
-        // console.log("Draws: "+ draws);
+        
     }
     else if (currentResult == "lose"){
         computerScore += 1;
-        // console.log("Losses: "+ computerScore);
+        
     }
     else if (currentResult == "win"){
         playerScore += 1;
-        // console.log("Wins: "+ playerScore);
+        
     }
     console.log("Draws: " + draws);
+    
+    displayScores.textContent = "PLAYER SCORE: " +playerScore+ "  DRAWS: " + draws + " COMPUTER SCORE: " + computerScore;
+    scores.appendChild(displayScores);
     console.log("Computer Score: " + computerScore);
     console.log("Player Score "+ playerScore);
+
+    if (playerScore > 4){
+
+    }
 }
+
+
+
 
 
 function game(){
