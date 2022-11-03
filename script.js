@@ -126,6 +126,9 @@ const scores = document.querySelector('#scores');
 
 const winner = document.querySelector('#winner')
 const displayWinner = document.createElement('h2');
+displayWinner.style.color = "purple";
+displayWinner.style.fontFamily = "Roboto";
+
 
 
 function game2(currentResult){
@@ -142,16 +145,21 @@ function game2(currentResult){
         playerScore += 1;
         
     }
-    console.log("Draws: " + draws);
+    
     
     displayScores.textContent = "PLAYER SCORE: " +playerScore+ "  DRAWS: " + draws + " COMPUTER SCORE: " + computerScore;
     scores.appendChild(displayScores);
-    console.log("Computer Score: " + computerScore);
-    console.log("Player Score "+ playerScore);
-
+    
+    
     if (playerScore > 4){
-
+        displayWinner.textContent = "YOU WIN! ";
+        winner.appendChild(displayWinner);
     }
+    else if (computerScore > 4){
+        displayWinner.textContent = "YOU LOSE! ";
+        winner.appendChild(displayWinner);
+    }
+    
 }
 
 
