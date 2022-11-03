@@ -117,11 +117,11 @@ function game2(currentResult){
     scores.appendChild(displayScores);
     
     
-    if (playerScore > 4){
+    if (playerScore > 2){
         displayWinner.textContent = "YOU WIN! ";
         winner.appendChild(displayWinner);
     }
-    else if (computerScore > 4){
+    else if (computerScore > 2){
         displayWinner.textContent = "YOU LOSE! ";
         winner.appendChild(displayWinner);
     }
